@@ -52,7 +52,7 @@ export default function StaffView() {
             </div>
             <div className="flex gap-1">
               {s.clockedIn ? <button onClick={() => clockOut(s.id)} className="flex-1 text-xs px-2 py-1.5 bg-slate-100 hover:bg-slate-200 rounded"><UserX className="w-3 h-3 inline" /> 下班</button> : <button onClick={() => clockIn(s.id)} className="flex-1 text-xs px-2 py-1.5 bg-emerald-50 text-emerald-700 rounded"><UserCheck className="w-3 h-3 inline" /> 上班</button>}
-              <button onClick={() => setEditing(s)} className="text-xs px-2 py-1.5 bg-slate-100 rounded"><Edit className="w-3 h-3" /></button>
+              <button aria-label="按鈕" onClick={() => setEditing(s)} className="text-xs px-2 py-1.5 bg-slate-100 rounded"><Edit className="w-3 h-3" /></button>
               {s.role !== 'admin' && <button onClick={() => { if (confirm('刪除？')) deleteStaff(s.id); }} className="text-xs px-2 py-1.5 bg-rose-50 text-rose-700 rounded"><Trash2 className="w-3 h-3" /></button>}
             </div>
           </div>
@@ -70,18 +70,26 @@ function StaffModal({ staff, isNew, onSave, onClose }: { staff: Partial<Staff>; 
       <div className="bg-white rounded-2xl w-full max-w-md">
         <div className="p-4 border-b flex justify-between items-center">
           <h3 className="font-bold">{isNew ? '新增員工' : '編輯員工'}</h3>
-          <button onClick={onClose}><X className="w-5 h-5" /></button>
+          <button aria-label="按鈕" onClick={onClose}><X className="w-5 h-5" /></button>
         </div>
         <form onSubmit={(e) => { e.preventDefault(); if (!data.username || !data.name) { alert('請填寫'); return; } onSave(data); }} className="p-5 space-y-3">
           <div className="grid grid-cols-2 gap-3">
-            <div><label className="text-sm block mb-1">帳號</label><input value={data.username} onChange={(e) => setData({ ...data, username: e.target.value })} className="w-full px-3 py-2 border rounded" /></div>
-            <div><label className="text-sm block mb-1">姓名</label><input value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} className="w-full px-3 py-2 border rounded" /></div>
+            <div><label className="text-sm block mb-1">帳號</label><input value={data.username} onChange={(e) => setData({ ...data, username: e.target.value })} className="w-full px-3 py-2 border rounded"
+                aria-label="text 輸入"
+              /></div>
+            <div><label className="text-sm block mb-1">姓名</label><input value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} className="w-full px-3 py-2 border rounded"
+                aria-label="text 輸入"
+              /></div>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <div><label className="text-sm block mb-1">密碼</label><input value={data.password} onChange={(e) => setData({ ...data, password: e.target.value })} className="w-full px-3 py-2 border rounded" /></div>
+            <div><label className="text-sm block mb-1">密碼</label><input value={data.password} onChange={(e) => setData({ ...data, password: e.target.value })} className="w-full px-3 py-2 border rounded"
+                aria-label="text 輸入"
+              /></div>
             <div><label className="text-sm block mb-1">角色</label><select value={data.role} onChange={(e) => setData({ ...data, role: e.target.value as StaffRole })} className="w-full px-3 py-2 border rounded"><option value="cashier">收銀員</option><option value="manager">店長</option><option value="admin">管理員</option></select></div>
           </div>
-          <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={data.active} onChange={(e) => setData({ ...data, active: e.target.checked })} />啟用</label>
+          <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={data.active} onChange={(e) => setData({ ...data, active: e.target.checked })}
+                aria-label="checkbox 輸入"
+              />啟用</label>
           <div className="grid grid-cols-2 gap-2 pt-2">
             <button type="button" onClick={onClose} className="px-4 py-2 border rounded">取消</button>
             <button type="submit" className="px-4 py-2 bg-indigo-600 text-white rounded">儲存</button>

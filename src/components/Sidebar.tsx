@@ -46,7 +46,7 @@ export default function Sidebar() {
           const Icon = item.icon;
           const active = currentView === item.view;
           return (
-            <button
+            <button aria-label="按鈕"
               key={item.view}
               onClick={() => setView(item.view)}
               className={cn(

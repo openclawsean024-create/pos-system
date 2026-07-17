@@ -66,7 +66,8 @@ export default function InventoryView() {
           onChange={(e) => setQ(e.target.value)}
           placeholder="搜尋商品名稱或 SKU"
           className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
-        />
+                aria-label="搜尋商品名稱或 SKU"
+              />
         <select
           value={filterCat}
           onChange={(e) => setFilterCat(e.target.value)}
@@ -80,7 +81,8 @@ export default function InventoryView() {
             checked={lowStockOnly}
             onChange={(e) => setLowStockOnly(e.target.checked)}
             className="rounded"
-          />
+                aria-label="checkbox 輸入"
+              />
           低庫存
         </label>
       </div>
@@ -120,7 +122,7 @@ export default function InventoryView() {
                   </td>
                   <td className="px-3 py-2 text-right">
                     <div className="flex justify-end gap-1">
-                      <button onClick={() => setEditing(p)} className="p-1 hover:bg-slate-100 rounded">
+                      <button aria-label="按鈕" onClick={() => setEditing(p)} className="p-1 hover:bg-slate-100 rounded">
                         <Edit className="w-3.5 h-3.5 text-slate-600" />
                       </button>
                       <button
@@ -185,7 +187,7 @@ function ProductModal({ product, isNew, onSave, onClose }: {
       <div className="bg-white rounded-2xl w-full max-w-lg">
         <div className="p-4 border-b border-slate-200 flex justify-between items-center">
           <h3 className="font-bold text-slate-900">{isNew ? '新增商品' : '編輯商品'}</h3>
-          <button onClick={onClose} className="p-1 hover:bg-slate-100 rounded">
+          <button aria-label="按鈕" onClick={onClose} className="p-1 hover:bg-slate-100 rounded">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -198,6 +200,7 @@ function ProductModal({ product, isNew, onSave, onClose }: {
                 value={data.sku}
                 onChange={(e) => setData({ ...data, sku: e.target.value })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="text 輸入"
               />
             </div>
             <div>
@@ -207,6 +210,7 @@ function ProductModal({ product, isNew, onSave, onClose }: {
                 value={data.category}
                 onChange={(e) => setData({ ...data, category: e.target.value })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="text 輸入"
               />
             </div>
           </div>
@@ -218,7 +222,8 @@ function ProductModal({ product, isNew, onSave, onClose }: {
               value={data.name}
               onChange={(e) => setData({ ...data, name: e.target.value })}
               className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
-            />
+                aria-label="text 輸入"
+              />
           </div>
 
           <div className="grid grid-cols-3 gap-3">
@@ -229,6 +234,7 @@ function ProductModal({ product, isNew, onSave, onClose }: {
                 value={data.price}
                 onChange={(e) => setData({ ...data, price: Number(e.target.value) })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="number 輸入"
               />
             </div>
             <div>
@@ -238,6 +244,7 @@ function ProductModal({ product, isNew, onSave, onClose }: {
                 value={data.cost}
                 onChange={(e) => setData({ ...data, cost: Number(e.target.value) })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="number 輸入"
               />
             </div>
             <div>
@@ -247,6 +254,7 @@ function ProductModal({ product, isNew, onSave, onClose }: {
                 value={data.unit}
                 onChange={(e) => setData({ ...data, unit: e.target.value })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="text 輸入"
               />
             </div>
           </div>
@@ -259,6 +267,7 @@ function ProductModal({ product, isNew, onSave, onClose }: {
                 value={data.stock}
                 onChange={(e) => setData({ ...data, stock: Number(e.target.value) })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="number 輸入"
               />
             </div>
             <div>
@@ -268,6 +277,7 @@ function ProductModal({ product, isNew, onSave, onClose }: {
                 value={data.reorderLevel}
                 onChange={(e) => setData({ ...data, reorderLevel: Number(e.target.value) })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="number 輸入"
               />
             </div>
           </div>
@@ -278,7 +288,8 @@ function ProductModal({ product, isNew, onSave, onClose }: {
               checked={data.active}
               onChange={(e) => setData({ ...data, active: e.target.checked })}
               className="rounded"
-            />
+                aria-label="checkbox 輸入"
+              />
             啟用（在收銀介面顯示）
           </label>
 

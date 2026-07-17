@@ -100,7 +100,7 @@ export default function AnalyticsView() {
             ['month', '本月'],
             ['all', '全部'],
           ] as const).map(([key, label]) => (
-            <button
+            <button aria-label="按鈕"
               key={key}
               onClick={() => setRange(key)}
               className={`px-3 py-1 rounded text-sm font-medium ${

@@ -57,7 +57,8 @@ export default function TransactionsView() {
             onChange={(e) => setQ(e.target.value)}
             placeholder="搜尋訂單編號、會員、員工"
             className="w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
-          />
+                aria-label="搜尋訂單編號、會員、員工"
+              />
         </div>
         <select
           value={statusFilter}
@@ -102,7 +103,7 @@ export default function TransactionsView() {
                   <StatusBadge status={tx.status} />
                 </td>
                 <td className="px-3 py-2 text-right">
-                  <button
+                  <button aria-label="按鈕"
                     onClick={() => setViewing(tx)}
                     className="p-1 hover:bg-slate-100 rounded"
                   >
@@ -176,7 +177,7 @@ function TransactionDetailModal({ tx, onClose, onRefund, onVoid }: {
             <h3 className="font-bold text-slate-900">交易詳情</h3>
             <div className="text-xs text-slate-500 font-mono">{tx.orderNo}</div>
           </div>
-          <button onClick={onClose} className="p-1 hover:bg-slate-100 rounded">
+          <button aria-label="按鈕" onClick={onClose} className="p-1 hover:bg-slate-100 rounded">
             <X className="w-5 h-5" />
           </button>
         </div>

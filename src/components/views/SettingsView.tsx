@@ -34,14 +34,18 @@ export default function SettingsView() {
         <div className="border-t pt-4">
           <h3 className="text-sm font-semibold mb-3">稅務設定</h3>
           <div className="grid grid-cols-2 gap-3">
-            <div><label className="block text-sm font-medium mb-1">營業稅率 (%)</label><input type="number" step="0.01" value={draft.taxRate * 100} onChange={(e) => setDraft({ ...draft, taxRate: Number(e.target.value) / 100 })} className="w-full px-3 py-2 border rounded-lg text-sm" /></div>
+            <div><label className="block text-sm font-medium mb-1">營業稅率 (%)</label><input type="number" step="0.01" value={draft.taxRate * 100} onChange={(e) => setDraft({ ...draft, taxRate: Number(e.target.value) / 100 })} className="w-full px-3 py-2 border rounded-lg text-sm"
+                aria-label="number 輸入"
+              /></div>
             <div><label className="block text-sm font-medium mb-1">價格含稅？</label><select value={draft.taxInclusive ? 'yes' : 'no'} onChange={(e) => setDraft({ ...draft, taxInclusive: e.target.value === 'yes' })} className="w-full px-3 py-2 border rounded-lg text-sm"><option value="yes">內含稅</option><option value="no">外加稅</option></select></div>
           </div>
         </div>
 
         <div className="border-t pt-4">
           <h3 className="text-sm font-semibold mb-3">會員制度</h3>
-          <div><label className="block text-sm font-medium mb-1">每元消費累積點數</label><input type="number" step="0.01" value={draft.pointsPerDollar} onChange={(e) => setDraft({ ...draft, pointsPerDollar: Number(e.target.value) })} className="w-full px-3 py-2 border rounded-lg text-sm" /><div className="text-xs text-slate-500 mt-1">例如 0.1 表示每 10 元累積 1 點</div></div>
+          <div><label className="block text-sm font-medium mb-1">每元消費累積點數</label><input type="number" step="0.01" value={draft.pointsPerDollar} onChange={(e) => setDraft({ ...draft, pointsPerDollar: Number(e.target.value) })} className="w-full px-3 py-2 border rounded-lg text-sm"
+                aria-label="number 輸入"
+              /><div className="text-xs text-slate-500 mt-1">例如 0.1 表示每 10 元累積 1 點</div></div>
         </div>
 
         <div className="border-t pt-4">
@@ -75,7 +79,9 @@ function Field({ label, value, onChange }: { label: string; value: string; onCha
   return (
     <div>
       <label className="block text-sm font-medium mb-1">{label}</label>
-      <input value={value} onChange={(e) => onChange(e.target.value)} className="w-full px-3 py-2 border rounded-lg text-sm" />
+      <input value={value} onChange={(e) => onChange(e.target.value)} className="w-full px-3 py-2 border rounded-lg text-sm"
+                aria-label="text 輸入"
+              />
     </div>
   );
 }

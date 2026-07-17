@@ -52,6 +52,7 @@ export default function LoginScreen() {
                 className="w-full pl-10 pr-3 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
                 placeholder="請輸入帳號"
                 autoFocus
+                aria-label="請輸入帳號"
               />
             </div>
           </div>
@@ -66,6 +67,7 @@ export default function LoginScreen() {
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full pl-10 pr-3 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
                 placeholder="請輸入密碼"
+                aria-label="請輸入密碼"
               />
             </div>
           </div>
@@ -88,7 +90,7 @@ export default function LoginScreen() {
           <p className="text-xs text-slate-500 mb-2">測試帳號（點擊快速登入）：</p>
           <div className="grid grid-cols-2 gap-2">
             {staff.filter(s => s.active).map(s => (
-              <button
+              <button aria-label="按鈕"
                 key={s.id}
                 onClick={() => quickLogin(s.username, s.password || '')}
                 className="text-xs px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700 transition-colors"

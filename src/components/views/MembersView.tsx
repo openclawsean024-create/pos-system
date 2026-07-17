@@ -50,7 +50,8 @@ export default function MembersView() {
         onChange={(e) => setQ(e.target.value)}
         placeholder="搜尋姓名或手機"
         className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm mb-3 focus:ring-2 focus:ring-indigo-500 outline-none"
-      />
+                aria-label="搜尋姓名或手機"
+              />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {filtered.map(m => (
@@ -97,7 +98,7 @@ export default function MembersView() {
                 <Wallet className="w-3 h-3" />
                 儲值
               </button>
-              <button
+              <button aria-label="按鈕"
                 onClick={() => setEditing(m)}
                 className="flex items-center justify-center px-2 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-medium"
               >
@@ -185,7 +186,7 @@ function MemberModal({ member, isNew, onSave, onClose }: {
       <div className="bg-white rounded-2xl w-full max-w-md">
         <div className="p-4 border-b border-slate-200 flex justify-between items-center">
           <h3 className="font-bold text-slate-900">{isNew ? '新增會員' : '編輯會員'}</h3>
-          <button onClick={onClose} className="p-1 hover:bg-slate-100 rounded">
+          <button aria-label="按鈕" onClick={onClose} className="p-1 hover:bg-slate-100 rounded">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -198,6 +199,7 @@ function MemberModal({ member, isNew, onSave, onClose }: {
                 value={data.name}
                 onChange={(e) => setData({ ...data, name: e.target.value })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="text 輸入"
               />
             </div>
             <div>
@@ -207,6 +209,7 @@ function MemberModal({ member, isNew, onSave, onClose }: {
                 value={data.phone}
                 onChange={(e) => setData({ ...data, phone: e.target.value })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="text 輸入"
               />
             </div>
           </div>
@@ -218,7 +221,8 @@ function MemberModal({ member, isNew, onSave, onClose }: {
               value={data.email}
               onChange={(e) => setData({ ...data, email: e.target.value })}
               className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
-            />
+                aria-label="email 輸入"
+              />
           </div>
 
           <div className="grid grid-cols-3 gap-3">
@@ -229,6 +233,7 @@ function MemberModal({ member, isNew, onSave, onClose }: {
                 value={data.points}
                 onChange={(e) => setData({ ...data, points: Number(e.target.value) })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="number 輸入"
               />
             </div>
             <div>
@@ -238,6 +243,7 @@ function MemberModal({ member, isNew, onSave, onClose }: {
                 value={data.balance}
                 onChange={(e) => setData({ ...data, balance: Number(e.target.value) })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="number 輸入"
               />
             </div>
             <div>
@@ -247,6 +253,7 @@ function MemberModal({ member, isNew, onSave, onClose }: {
                 value={data.totalSpent}
                 onChange={(e) => setData({ ...data, totalSpent: Number(e.target.value) })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                aria-label="number 輸入"
               />
             </div>
           </div>
@@ -287,7 +294,7 @@ function TopUpModal({ member, onConfirm, onClose }: {
       <div className="bg-white rounded-2xl w-full max-w-sm">
         <div className="p-4 border-b border-slate-200 flex justify-between items-center">
           <h3 className="font-bold text-slate-900">儲值</h3>
-          <button onClick={onClose} className="p-1 hover:bg-slate-100 rounded">
+          <button aria-label="按鈕" onClick={onClose} className="p-1 hover:bg-slate-100 rounded">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -302,10 +309,11 @@ function TopUpModal({ member, onConfirm, onClose }: {
             value={amount}
             onChange={(e) => setAmount(Number(e.target.value))}
             className="w-full px-3 py-3 border border-slate-300 rounded-lg text-2xl font-bold text-center focus:ring-2 focus:ring-indigo-500 outline-none"
-          />
+                aria-label="number 輸入"
+              />
           <div className="grid grid-cols-4 gap-1.5 mt-2">
             {[500, 1000, 2000, 5000].map(a => (
-              <button
+              <button aria-label="按鈕"
                 key={a}
                 onClick={() => setAmount(a)}
                 className="px-2 py-1.5 bg-slate-100 hover:bg-slate-200 rounded text-sm font-medium"
