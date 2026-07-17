@@ -87,6 +87,9 @@ const calcTier = (totalSpent: number): Member['tier'] => {
   return 'bronze';
 };
 
+// Exported for testing — pure helpers
+export { generateId, generateOrderNo, calcTier };
+
 export const usePOSStore = create<POSState>()(
   persist(
     (set, get) => ({

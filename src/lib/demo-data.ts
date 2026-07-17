@@ -33,11 +33,11 @@ export const DEMO_PRODUCTS: Product[] = [
 ];
 
 export const DEMO_MEMBERS: Member[] = [
-  { id: 'm001', name: '王小明', phone: '0912-345-678', email: 'wang@example.com', points: 1250, balance: 500, totalSpent: 12500, tier: 'gold', joinedAt: '2025-06-15', lastVisitAt: '2026-07-10' },
+  { id: 'm001', name: '王小明', phone: '0912-345-678', email: 'wang@example.com', points: 1250, balance: 500, totalSpent: 12500, tier: 'silver', joinedAt: '2025-06-15', lastVisitAt: '2026-07-10' },
   { id: 'm002', name: '林大嬸', phone: '0923-456-789', points: 850, balance: 200, totalSpent: 8500, tier: 'silver', joinedAt: '2025-08-20', lastVisitAt: '2026-07-11' },
   { id: 'm003', name: '陳同學', phone: '0934-567-890', email: 'chen@example.com', points: 320, balance: 0, totalSpent: 3200, tier: 'bronze', joinedAt: '2026-02-10', lastVisitAt: '2026-07-09' },
   { id: 'm004', name: '張董事長', phone: '0945-678-901', points: 5800, balance: 2000, totalSpent: 58000, tier: 'vip', joinedAt: '2024-11-05', lastVisitAt: '2026-07-12' },
-  { id: 'm005', name: '李小姐', phone: '0956-789-012', points: 450, balance: 0, totalSpent: 4500, tier: 'silver', joinedAt: '2025-12-01', lastVisitAt: '2026-07-08' },
+  { id: 'm005', name: '李小姐', phone: '0956-789-012', points: 450, balance: 0, totalSpent: 4500, tier: 'bronze', joinedAt: '2025-12-01', lastVisitAt: '2026-07-08' },
   { id: 'm006', name: '黃先生', phone: '0967-890-123', email: 'huang@example.com', points: 920, balance: 300, totalSpent: 9200, tier: 'silver', joinedAt: '2025-09-15', lastVisitAt: '2026-07-11' },
   { id: 'm007', name: '趙太太', phone: '0978-901-234', points: 2100, balance: 1000, totalSpent: 21000, tier: 'gold', joinedAt: '2025-03-22', lastVisitAt: '2026-07-12' },
   { id: 'm008', name: '孫工程師', phone: '0989-012-345', email: 'sun@example.com', points: 150, balance: 0, totalSpent: 1500, tier: 'bronze', joinedAt: '2026-05-18', lastVisitAt: '2026-07-05' },
